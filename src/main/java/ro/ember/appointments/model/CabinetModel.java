@@ -23,7 +23,7 @@ public class CabinetModel {
         return cabinets;
     }
 
-    public Cabinet getCabinetById(UUID id){
-        return entityManager.find(Cabinet.class, id);
+    public Cabinet getCabinetById(int cabinetId){
+        return entityManager.find(Cabinet.class, cabinetId);
     }
 }

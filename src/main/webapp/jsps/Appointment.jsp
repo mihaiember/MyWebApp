@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +9,7 @@
     <meta name="viewpoint" content="width=width-device, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style>
-        .jumbotron {
-            background-color: rgba(128, 123, 162, 0.74);
-            color: #000000;
-        }
-    </style>
+
 </head>
 <body>
 <div class="container">
@@ -19,19 +17,15 @@
         <h1> Programare </h1>
     </div>
 
-    <div class="row">
-        <div class="col-md-3">
-            <p> Doctor </p>
-        </div>
+    <form method="post">
+    <div class="form-group row">
+        <label for="doctor" class="col-sm-3 col-form-label">Doctor</label>
         <div class="col-md-6">
             <div class="form-group">
-
-                <select class="form-control" id="sel1">
-                    <option>Doctor1</option>
-                    <option>Doctor2</option>
-                    <option>Doctor3</option>
-                    <option>Doctor4</option>
-
+                <select class="form-control" id="doctor" name="doctor">
+                    <c:forEach var="doctor" items="${requestScope.doctors}">
+                        <option value="<c:out value="${doctor.doctorId}"/>"><c:out value="${doctor.doctorName}"/></option>
+                    </c:forEach>
                 </select>
             </div>
         </div>
@@ -60,21 +54,18 @@
         </script>
     </div>
 
-    <div class="row">
-        <div class="col-md-3">
-            <p> Cabinet </p>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <select class="form-control" id="sel1">
-                    <option>Cabinet1</option>
-                    <option>Cabinet2</option>
-                    <option>Cabinet3</option>
-                    <option>Cabinet4</option>
-                </select>
+        <div class="form-group row">
+            <label for="cabinet" class="col-sm-3 col-form-label">Cabinet</label>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <select class="form-control" id="cabinet" name="cabinet">
+                        <c:forEach var="cabinet" items="${requestScope.cabinets}">
+                            <option value="<c:out value="${cabinet.cabinetId}"/>"><c:out value="${cabinet.cabinetName}"/></option>
+                        </c:forEach>
+                    </select>
+                </div>
             </div>
         </div>
-    </div>
 
     <div class="row">
         <div class="col-md-3">

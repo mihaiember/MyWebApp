@@ -10,12 +10,12 @@ public class Doctor   {
 
     @Id
     @Column(name="id")
-    private UUID doctorId;
+    private int doctorId;
 
     @Column (name = "name")
     private String doctorName;
 
-    @OneToMany(mappedBy = "doctors")
+    @OneToMany(mappedBy = "doctor")
     List<Appointment> appointments;
 
     public Doctor (){
@@ -23,11 +23,11 @@ public class Doctor   {
     }
 
 
-    public UUID getDoctorId() {
+    public int getDoctorId() {
         return doctorId;
     }
 
-    public void setDoctorId(UUID doctorId) {
+    public void setDoctorId(int doctorId) {
         this.doctorId = doctorId;
     }
 

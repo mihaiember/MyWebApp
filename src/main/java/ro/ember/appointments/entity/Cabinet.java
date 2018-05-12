@@ -9,23 +9,23 @@ import java.util.UUID;
 public class Cabinet {
     @Id
     @Column(name="id")
-    private UUID cabinetId;
+    private int cabinetId;
 
     @Column (name = "name")
     private String cabinetName;
 
-    @OneToMany(mappedBy = "cabinets")
+    @OneToMany(mappedBy = "cabinet")
     List<Appointment> appointments;
 
     public Cabinet(){
 
     }
 
-    public UUID getCabinetId() {
+    public int getCabinetId() {
         return cabinetId;
     }
 
-    public void setCabinetId(UUID cabinetId) {
+    public void setCabinetId(int cabinetId) {
         this.cabinetId = cabinetId;
     }
 

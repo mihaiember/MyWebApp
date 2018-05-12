@@ -14,13 +14,13 @@ public class DoctorModel {
         this.entityManager = entityManager;
     }
 
-    public List<Doctor> getDoctor(){
+    public List<Doctor> getDoctors(){
         Query q = entityManager.createQuery("SELECT doctor FROM ro.ember.appointments.entity.Doctor doctor");
         List<Doctor> doctors = q.getResultList();
         return doctors;
     }
 
-    public Doctor getDoctorById(UUID id){
-        return entityManager.find(Doctor.class, id);
+    public Doctor getDoctorById(int doctorId){
+        return entityManager.find(Doctor.class, doctorId);
     }
 }
