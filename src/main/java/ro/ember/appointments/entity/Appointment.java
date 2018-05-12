@@ -11,7 +11,7 @@ import java.util.UUID;
 public class Appointment {
     @Id
     @Column(name = "id")
-    private UUID appointmentId;
+    private int appointmentId;
 
     @ManyToOne
     private Doctor doctor;
@@ -19,10 +19,10 @@ public class Appointment {
     @ManyToOne
     private Cabinet cabinet;
 
-    @Column(name = "Date")
+    @Column(name = "date")
     private Date date;
 
-    @Column(name = "Time")
+    @Column(name = "time")
     private Time time;
 
     @Column(name = "pacientLastName")
@@ -38,11 +38,12 @@ public class Appointment {
     private SendingLetter sendingLetter;
 
 
-    public UUID getAppointmentId() {
-        return appointmentId}
+    public int getAppointmentId() {
+        return appointmentId;
+    }
 
-    public void setAppontmentId(UUID appontmentId) {
-        this.appointmentId = appontmentId;
+    public void setAppointmentId(int appointmentId) {
+        this.appointmentId = appointmentId;
     }
 
     public Doctor getDoctor() {
