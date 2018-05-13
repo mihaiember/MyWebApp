@@ -10,8 +10,8 @@ import javax.persistence.Persistence;
  * Created by Mike on 5/5/2018.
  */
 public final class PersistenceFactory {
-    private static final Logger LOGGER = LoggerFactory.getLogger("appointment");
-    private static final String PERSISTENCE_UNIT_NAME = "appointment";
+    private static final Logger LOGGER = LoggerFactory.getLogger("postgres");
+    private static final String PERSISTENCE_UNIT_NAME = "postgres";
 
     private final static class PersistenceFactoryHolder {
         private final static EntityManagerFactory instance = createPersistenceFactory();

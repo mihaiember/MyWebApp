@@ -6,12 +6,13 @@ import org.slf4j.LoggerFactory;
 import javax.persistence.EntityManagerFactory;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 
-
+@WebListener
 public class JpaListener implements ServletContextListener{
     public static final String PERSISTENCE_FACTORY = "PERSISTENCE_FACTORY";
 
-    private static final Logger LOGGER = LoggerFactory.getLogger("appointment");
+    private static final Logger LOGGER = LoggerFactory.getLogger("postgres");
 
     public void contextInitialized(ServletContextEvent sce) {
 

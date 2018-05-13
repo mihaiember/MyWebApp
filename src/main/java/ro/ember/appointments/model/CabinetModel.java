@@ -18,7 +18,7 @@ public class CabinetModel {
     }
 
     public List<Cabinet> getCabinets(){
-        Query q = entityManager.createQuery("select cabinet from ro.ember.appointments.entity.Cabinet cabinet");
+        Query q = entityManager.createQuery("select cabinet from ro.ember.appointments.entity.Cabinet cabinets");
         List<Cabinet> cabinets = q.getResultList();
         return cabinets;
     }

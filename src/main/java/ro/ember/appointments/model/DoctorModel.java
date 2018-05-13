@@ -15,7 +15,7 @@ public class DoctorModel {
     }
 
     public List<Doctor> getDoctors(){
-        Query q = entityManager.createQuery("SELECT doctor FROM ro.ember.appointments.entity.Doctor doctor");
+        Query q = entityManager.createQuery("SELECT doctors FROM ro.ember.appointments.entity.Doctor doctors");
         List<Doctor> doctors = q.getResultList();
         return doctors;
     }

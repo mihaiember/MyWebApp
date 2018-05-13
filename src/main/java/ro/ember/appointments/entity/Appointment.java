@@ -3,7 +3,7 @@ package ro.ember.appointments.entity;
 import javax.persistence.*;
 import java.sql.Time;
 import java.util.Date;
-import java.util.UUID;
+
 
 
 @Entity
