@@ -12,7 +12,7 @@ import javax.servlet.annotation.WebListener;
 public class JpaListener implements ServletContextListener{
     public static final String PERSISTENCE_FACTORY = "PERSISTENCE_FACTORY";
 
-    private static final Logger LOGGER = LoggerFactory.getLogger("postgres");
+    private static final Logger LOGGER = LoggerFactory.getLogger("MyWebApp");
 
     public void contextInitialized(ServletContextEvent sce) {
 
