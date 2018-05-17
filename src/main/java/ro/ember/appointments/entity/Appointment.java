@@ -32,7 +32,7 @@ public class Appointment {
     private String pacientFirstName;
 
     @Column(name = "pacientPhoneNumber")
-    private String pacientPhoneNumber;
+    private int pacientPhoneNumber;
 
     @Column(name="sendingLetter")
     private SendingLetter sendingLetter;
@@ -94,11 +94,11 @@ public class Appointment {
         this.pacientFirstName = pacientFirstName;
     }
 
-    public String getPacientPhoneNumber() {
+    public int getPacientPhoneNumber() {
         return pacientPhoneNumber;
     }
 
-    public void setPacientPhoneNumber(String pacientPhoneNumber) {
+    public void setPacientPhoneNumber(int pacientPhoneNumber) {
         this.pacientPhoneNumber = pacientPhoneNumber;
     }
 

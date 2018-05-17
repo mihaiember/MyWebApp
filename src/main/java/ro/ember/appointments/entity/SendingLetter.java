@@ -8,4 +8,6 @@ import java.util.List;
  */
 public enum SendingLetter {
     DA, NU
+
+
 }
