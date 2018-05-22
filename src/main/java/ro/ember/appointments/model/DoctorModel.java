@@ -23,4 +23,6 @@ public class DoctorModel {
     public Doctor getDoctorById(int doctorId){
         return entityManager.find(Doctor.class, doctorId);
     }
+
+
 }

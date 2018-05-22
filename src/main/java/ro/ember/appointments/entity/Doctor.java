@@ -22,6 +22,10 @@ public class Doctor   {
 
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 
     public int getDoctorId() {
         return doctorId;

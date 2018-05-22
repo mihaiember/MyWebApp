@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Clinica</title>
+    <title>Appointment</title>
     <meta charset="UTF-8">
     <meta name="viewpoint" content="width=width-device, initial-scale=1">
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -46,9 +46,7 @@
                 <p> Data </p>
             </div>
 
-
             <div class='col-md-6'>
-
                 <script
                         src="https://code.jquery.com/jquery-2.2.4.min.js"
                         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -57,12 +55,11 @@
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
 
                 <div class="form-group">
-                    <div class="input-group date" data-provide="datepicker">
+                    <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
                         <input type="text" class="form-control" name="data" value="">
                         <div class="input-group-addon">
                             <span class="glyphicon glyphicon-th"></span>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -75,8 +72,7 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <select class="form-control" name="hour">
-                        <option>07</option>
-                        <option>08</option>
+
                         <option>09</option>
                         <option>10</option>
                         <option>11</option>
@@ -90,9 +86,7 @@
                         <option>19</option>
                         <option>20</option>
                         <option>21</option>
-                        <option>22</option>
-                        <option>23</option>
-                        <option>24</option>
+
                     </select>
                 </div>
             </div>
@@ -102,17 +96,7 @@
                 <div class="form-group">
                     <select class="form-control" name="minute">
                         <option>00</option>
-                        <option>05</option>
-                        <option>10</option>
-                        <option>15</option>
-                        <option>20</option>
-                        <option>25</option>
                         <option>30</option>
-                        <option>35</option>
-                        <option>40</option>
-                        <option>45</option>
-                        <option>50</option>
-                        <option>55</option>
                     </select>
                 </div>
             </div>
@@ -157,7 +141,7 @@
                     <p> Telefon </p>
                 </div>
                 <div class="col-md-6">
-                    <input class="form-control" placeholder="Telefon" type="text" name="telefon" class="form-control" id="Telefon">
+                    <input class="form-control" placeholder="Telefon" type="number" name="telefon" class="form-control" id="Telefon">
                 </div>
             </div>
 
@@ -184,13 +168,7 @@
             </div>
         </div>
 
-        <div class="form-group row">
-            <div class="col-md-6">
-            </div>
-            <div class="col-md-3">
-                <button class="btn btn-danger btn-block"> Sterge Formularul</button>
-            </div>
-        </div>
+
 
     </form>
 

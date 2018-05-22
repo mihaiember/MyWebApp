@@ -1,7 +1,8 @@
 package ro.ember.appointments.entity;
 
+
+
 import javax.persistence.*;
-import java.sql.Time;
 import java.util.Date;
 
 
@@ -9,7 +10,7 @@ import java.util.Date;
 @Entity
 @Table(name="appointments")
 public class Appointment {
-    @Id
+    @Id @GeneratedValue
     @Column(name = "id")
     private int appointmentId;
 
@@ -22,19 +23,17 @@ public class Appointment {
     @Column(name = "date")
     private Date date;
 
-    @Column(name = "time")
-    private Time time;
+    @Column(name = "patient_last_name")
+    private String patientLastName;
 
-    @Column(name = "pacientLastName")
-    private String pacientLastName;
+    @Column(name = "patient_firts_name")
+    private String patientFirstName;
 
-    @Column(name = "pacientFirstName")
-    private String pacientFirstName;
+    @Column(name = "patient_phone_number")
+    private String patientPhoneNumber;
 
-    @Column(name = "pacientPhoneNumber")
-    private int pacientPhoneNumber;
-
-    @Column(name="sendingLetter")
+    @Enumerated(EnumType.STRING)
+    @Column(name="sending_letter")
     private SendingLetter sendingLetter;
 
 
@@ -70,36 +69,28 @@ public class Appointment {
         this.date = date;
     }
 
-    public Time getTime() {
-        return time;
+    public String getPatientLastName() {
+        return patientLastName;
     }
 
-    public void setTime(Time time) {
-        this.time = time;
+    public void setPatientLastName(String pacientLastName) {
+        this.patientLastName = pacientLastName;
     }
 
-    public String getPacientLastName() {
-        return pacientLastName;
+    public String getPatientFirstName() {
+        return patientFirstName;
     }
 
-    public void setPacientLastName(String pacientLastName) {
-        this.pacientLastName = pacientLastName;
+    public void setPatientFirstName(String pacientFirstName) {
+        this.patientFirstName = pacientFirstName;
     }
 
-    public String getPacientFirstName() {
-        return pacientFirstName;
+    public String getPatientPhoneNumber() {
+        return patientPhoneNumber;
     }
 
-    public void setPacientFirstName(String pacientFirstName) {
-        this.pacientFirstName = pacientFirstName;
-    }
-
-    public int getPacientPhoneNumber() {
-        return pacientPhoneNumber;
-    }
-
-    public void setPacientPhoneNumber(int pacientPhoneNumber) {
-        this.pacientPhoneNumber = pacientPhoneNumber;
+    public void setPatientPhoneNumber(String patientPhoneNumber) {
+        this.patientPhoneNumber = patientPhoneNumber;
     }
 
     public SendingLetter getSendingLetter() {
@@ -113,4 +104,6 @@ public class Appointment {
     public Appointment(){
 
     }
+
+
 }

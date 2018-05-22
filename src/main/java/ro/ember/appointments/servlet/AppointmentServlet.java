@@ -9,9 +9,9 @@ import ro.ember.appointments.entity.SendingLetter;
 import ro.ember.appointments.model.AppointmentModel;
 import ro.ember.appointments.model.CabinetModel;
 import ro.ember.appointments.model.DoctorModel;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.print.Doc;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,9 +23,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.UUID;
-
-import static java.util.UUID.fromString;
 import static ro.ember.persistence.JpaListener.PERSISTENCE_FACTORY;
 
 /**
@@ -65,14 +62,12 @@ public class AppointmentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int doctorId = Integer.parseInt(req.getParameter("doctor"));
         int cabinetId = Integer.parseInt(req.getParameter("cabinet"));
-
         Doctor doctor = doctorModel.getDoctorById(doctorId);
         Cabinet cabinet = cabinetModel.getCabinetById(cabinetId);
-
         String date = req.getParameter("data");
         LOGGER.error(date);
         System.out.println(date);
-        SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         Date data = new Date();
         try {
             data = format.parse(date);
@@ -83,28 +78,19 @@ public class AppointmentServlet extends HttpServlet {
         calendar.setTime(data);
         calendar.set(Calendar.MINUTE, Integer.parseInt(req.getParameter("minute")));
         calendar.set(Calendar.HOUR, Integer.parseInt(req.getParameter("hour")));
-
-
-        String pacientLastName = req.getParameter("nume");
-        String pacientFirstName = req.getParameter("prenume");
-        int pacientPhoneNumber = Integer.parseInt(req.getParameter("telefon"));
+        String patientLastName = req.getParameter("nume");
+        String patientFirstName = req.getParameter("prenume");
+        String patientPhoneNumber = req.getParameter("telefon");
         SendingLetter sendingLetter = SendingLetter.valueOf(req.getParameter("sendingLetter"));
-
         Appointment appointment = new Appointment();
-
-        //appointment.setAppointmentId(int appointmentID);
         appointment.setDoctor(doctor);
         appointment.setCabinet(cabinet);
-
         appointment.setDate(calendar.getTime());
-
-        appointment.setPacientLastName(pacientLastName);
-        appointment.setPacientFirstName(pacientFirstName);
-        appointment.setPacientPhoneNumber(pacientPhoneNumber);
+        appointment.setPatientLastName(patientLastName);
+        appointment.setPatientFirstName(patientFirstName);
+        appointment.setPatientPhoneNumber(patientPhoneNumber);
         appointment.setSendingLetter(sendingLetter);
-
-
         appointmentModel.scheduleAppointment(appointment);
-        resp.sendRedirect(getServletContext().getContextPath() + "/appointment");
+        resp.sendRedirect(getServletContext().getContextPath() + "/home");
     }
 }
