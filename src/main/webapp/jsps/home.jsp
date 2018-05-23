@@ -15,7 +15,7 @@
 
 <body>
 <div class="container">
-    <div class="jumbotron" style="background-color:limegreen;">
+    <div class="jumbotron" style="background-color:orangered;">
         <h1 style="text-align:center;"> Clinica </h1>
     </div>
     <div class="form-group row">

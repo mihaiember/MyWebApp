@@ -14,31 +14,26 @@
 <body>
 <div class="container">
     <div class="page-header">
-        <h1> Cautare dupa nume pacient </h1>
+
+            <h1>Cautare dupa numar de telefon</h1>
     </div>
 
-    <form role="form" action="/patientNameSearchForm" method="post">
+
+
+    <form role="form" action="/telephoneSearch" method="post">
         <div class="form-group row">
             <div class="col-md-3">
-                <p> Introdu numele </p>
+                <p> Introdu numarul de telefon </p>
             </div>
             <div class="col-md-6">
-                <input class="form-control" placeholder="Nume" type="text" name="last_name" class="form-control">
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-md-3">
-                <p> Introdu prenumele </p>
-            </div>
-            <div class="col-md-6">
-                <input class="form-control" placeholder="Prenume" type="text" name="first_name" class="form-control">
+                <input class="form-control" placeholder="Telefon" type="number" name="phone" class="form-control"
+                       id="Telefon">
             </div>
         </div>
 
         <div class="form-group row">
             <div class="col-md-3">
             </div>
-
             <div class="col-md-3">
                 <input type="button" class="btn btn-info" value="Home" onclick=" relocate()">
                 <script>
@@ -47,7 +42,6 @@
                     }
                 </script>
             </div>
-
             <div class="col-md-3">
                 <button class="btn btn-success btn-block"> Cautare</button>
             </div>
